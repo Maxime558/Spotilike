@@ -28,6 +28,24 @@ const catalogue = [
     audio: "blabla.mp3",
     album: "Front 242",
     like: false,
+  },  {
+    titre: "Pams Plants Full Of Ants",
+    artiste: "Rat Heart & The Peanuts",
+    genre: ["Rock", "Electronic"],
+    annee: 2023,
+    cover: "The-pamela-peanut-kitchen-sessions.jpg",
+    audio: "blabla.mp3",
+    album: "The Pamela Peanut Kitchen Sessions",
+    like: false,
+  },  {
+    titre: "	Saints And Sinners",
+    artiste: "Boldy James & RichGains",
+    genre: ["Hip Hop"],
+    annee: 2023,
+    cover: "Indiana-jones.jpg",
+    audio: "blabla.mp3",
+    album: "Indiana Jones",
+    like: false,
   },
 ];
 
