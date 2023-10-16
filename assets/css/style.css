@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
 /*
  ██████╗ ███████╗███████╗███████╗████████╗
  ██╔══██╗██╔════╝██╔════╝██╔════╝╚══██╔══╝
@@ -13,6 +15,7 @@
   padding: 0;
   font-family: "Lato-Light", "sans-serif";
   box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -45,8 +48,4 @@ button {
 }
 #slider {
   overflow: hidden;
-}
-#slider p {
-font-size: 3rem;
-text-decoration: underline;
 }
