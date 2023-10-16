@@ -46,3 +46,7 @@ button {
 #slider {
   overflow: hidden;
 }
+#slider p {
+font-size: 3rem;
+text-decoration: underline;
+}
