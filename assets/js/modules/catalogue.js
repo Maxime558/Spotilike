@@ -1,12 +1,12 @@
 const catalogue = [
   {
-    titre: "Rerun Time",
-    artiste: "Front 242",
-    genre: ["Electronic"],
+    titre: "The Great Escape",
+    artiste: "Boys Like Girls",
+    genre: ["Rock", "Pop"],
     annee: 2023,
-    cover: "front242.jpg",
+    cover: "boys-like-girls.jpg",
     audio: "blabla.mp3",
-    album: "Front 242",
+    album: "Boys Like Girls",
     like: false,
   },
   {
@@ -20,13 +20,13 @@ const catalogue = [
     like: false,
   },
   {
-    titre: "The Great Escape",
-    artiste: "Boys Like Girls",
-    genre: ["Rock", "Pop"],
+    titre: "Rerun Time",
+    artiste: "Front 242",
+    genre: ["Electronic"],
     annee: 2023,
-    cover: "boys-like-girls.jpg",
+    cover: "front242.jpg",
     audio: "blabla.mp3",
-    album: "Boys Like Girls",
+    album: "Front 242",
     like: false,
   },
 ];
