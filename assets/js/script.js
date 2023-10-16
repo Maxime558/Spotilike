@@ -1,5 +1,6 @@
 import { catalogue } from "./modules/catalogue.js";
 import { slider } from "./modules/slider.js";
+import { audio } from "./modules/audio.js";
 // console.dir(catalogue);
 let currentTrack = 0;
 
@@ -27,3 +28,4 @@ nextButton.addEventListener("click", () => {
 });
 
 slider(catalogue, currentTrack);
+audio (catalogue, currentTrack);
