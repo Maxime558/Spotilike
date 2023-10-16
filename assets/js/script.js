@@ -10,6 +10,7 @@ prevButton.addEventListener("click", () => {
   } else {
     currentTrack = catalogue.length - 1;
   }
+    slider(catalogue, currentTrack, "prev");
     console.log(currentTrack);
 });
 
@@ -21,6 +22,7 @@ nextButton.addEventListener("click", () => {
   } else {
     currentTrack = 0;
   }
+  slider(catalogue, currentTrack, "next");
   console.log(currentTrack);
 });
 
