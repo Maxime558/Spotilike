@@ -1,15 +1,5 @@
 const catalogue = [
   {
-    titre: "The Great Escape",
-    artiste: "Boys Like Girls",
-    genre: ["Rock", "Pop"],
-    annee: 2023,
-    cover: "boys-like-girls.jpg",
-    audio: "blabla.mp3",
-    album: "Boys Like Girls",
-    like: false,
-  },
-  {
     titre: "I Could Cry",
     artiste: "Kiefer",
     genre: ["Hip Hop", "Jazz"],
@@ -17,6 +7,16 @@ const catalogue = [
     cover: "Its-ok-bu.jpg",
     audio: "blabla.mp3",
     album: "It's Ok, B U",
+    like: false,
+  },
+  {
+    titre: "The Great Escape",
+    artiste: "Boys Like Girls",
+    genre: ["Rock", "Pop"],
+    annee: 2023,
+    cover: "boys-like-girls.jpg",
+    audio: "blabla.mp3",
+    album: "Boys Like Girls",
     like: false,
   },
   {
