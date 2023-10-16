@@ -6,6 +6,9 @@ let currentTrack = 0;
 const prevButton = document.querySelector("#prev");
 
 const nextButton = document.querySelector("#next");
-
+// click sur le bouton next
+nextButton.addEventListener("click", () => {
+  
+});
 
 slider(catalogue, currentTrack);
