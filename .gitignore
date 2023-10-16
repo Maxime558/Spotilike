@@ -73,4 +73,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # Files
-.mp3
+*.mp3
+!internal/data/*.mp3
