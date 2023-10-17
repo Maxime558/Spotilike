@@ -140,16 +140,6 @@ const catalogue = [
     like: false,
   },
   {
-    titre: "S.O.S",
-    artiste: "Indila",
-    genre: ["Pop"],
-    annee: 2014,
-    cover: "indila.jpg",
-    audio: "Indila - S.O.S.mp3",
-    album: "Mini World",
-    like: false,
-  },
-  {
     titre: "One More Time",
     artiste: "Kylie",
     genre: ["Electronic", "Pop"],
@@ -167,6 +157,16 @@ const catalogue = [
     cover: "Led Zeppelin.jpg",
     audio: "Led Zeppelin - Good Times Bad Times (Official Audio).mp3",
     album: "Led Zeppelin",
+    like: false,
+  },
+  {
+    titre: "S.O.S",
+    artiste: "Indila",
+    genre: ["Pop"],
+    annee: 2014,
+    cover: "indila.jpg",
+    audio: "Indila - S.O.S.mp3",
+    album: "Mini World",
     like: false,
   },
 

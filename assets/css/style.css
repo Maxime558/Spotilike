@@ -50,6 +50,7 @@ button {
   background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);
   background: linear-gradient(to right, #ff5e62, #ff9966);
   color: white;
+  cursor: pointer;
   margin: 1.5rem;
   border: 1px black;
 }
@@ -87,6 +88,11 @@ button {
 .track-info {
   flex: 1;
   padding: 10px;
+}
+
+.track-details .track-info {
+width: 80%;
+margin: auto;
 }
 
 #playlist {

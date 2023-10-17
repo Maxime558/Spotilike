@@ -15,14 +15,12 @@ const initSlider = () => {
 const nextSlider = () => {
   document.querySelector("#coverSlider").src =
     coverUrl + catalogue[currentTrack].cover;
-  document.querySelector("#imgA").classList.add("slideRight");
-  document.querySelector("#imgA").classList.add("transSlider");
+  document.querySelector("#imgA").classList.add("transSlider","slideLeft");
   setTimeout(() => {
     document.querySelector("#imgA").src =
       coverUrl + catalogue[currentTrack].cover;
-    document.querySelector("#imgA").classList.remove("slideRight");   
-    document.querySelector("#imgA").classList.remove(".transSlider");
-  }, 400);
+    document.querySelector("#imgA").classList.remove("transSlider","slideLeft");
+  },400);
 };
 
 const slider = (status = "init") => {

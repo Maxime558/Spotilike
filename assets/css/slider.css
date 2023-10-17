@@ -17,10 +17,13 @@ left: 0;
 
 #coverSlider {
 
-}
+} 
 .transSlider{
 transition: all 0.4s;
 }
-.slideRight{
-    transform: translateX(100%);
+.slideLeft{
+    transform: translateX(-100%);
+}
+.fadeOut {
+opacity: 0;
 }
