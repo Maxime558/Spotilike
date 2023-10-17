@@ -129,6 +129,36 @@ const catalogue = [
     album: "Birmingham Odeon",
     like: false,
   },
+  {
+    titre: "Radioactive",
+    artiste: "Imagine Dragons",
+    genre: ["Rock", "Pop"],
+    annee: 2012,
+    cover: "imaginedragons.jpg",
+    audio: "Imagine Dragons - Radioactive.mp3",
+    album: "Night Visions",
+    like: false,
+  },
+  {
+    titre: "S.O.S",
+    artiste: "Indila",
+    genre: ["Pop"],
+    annee: 2014,
+    cover: "indila.jpg",
+    audio: "Indila - S.O.S.mp3",
+    album: "Mini World",
+    like: false,
+  },
+  {
+    titre: "One More Time",
+    artiste: "Kylie",
+    genre: ["Electronic", "Pop"],
+    annee: 2023,
+    cover: "Kylie.jpg",
+    audio: "One More Time.mp3",
+    album: "Tension",
+    like: false,
+  },
 ];
 
 export { catalogue };

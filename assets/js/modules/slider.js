@@ -1,4 +1,4 @@
-const slider = (catalogue, currentTrack, status = "init") => {
+const slider = (currentTrack, status = "init") => {
   console.log("Initialisation du slider");
   // console.dir(catalogue);
   // console.log(catalogue[0].cover);

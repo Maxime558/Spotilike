@@ -1,4 +1,4 @@
-const audio = (catalogue, currentTrack, status = "init") => {
+const audio = (currentTrack, status = "init") => {
   const urlAudio = "./assets/audio/";
 
   switch (status) {
