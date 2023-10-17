@@ -50,8 +50,12 @@ button {
   background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  
   background: linear-gradient(to right, #ff5e62, #ff9966); 
   color: white;
-  margin: 0px 1rem;
+  margin: 1rem 1.5rem;
 }
 #slider {
   overflow: hidden;
+}
+#style {
+border: rgba(255, 255, 255, 0.459) 1px solid;
+padding: 1rem;
 }
