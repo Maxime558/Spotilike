@@ -8,6 +8,8 @@ let isPlaying = false;
 const prevButton = document.querySelector("#prev");
 const nextButton = document.querySelector("#next");
 const playPause = document.querySelector("#playPause");
+// Globalthis permet de partager une variable ou une fonction avec tout mes modules
+globalThis.track = null;
 
 prevButton.addEventListener("click", () => {
   if (currentTrack > 0) {
@@ -33,8 +35,10 @@ nextButton.addEventListener("click", () => {
 playPause.addEventListener("click", () => {
   if (isPlaying) {
     playPause.innerText = "Play";
+    audio(catalogue, currentTrack, "play");
   } else {
     playPause.innerText = "Pause";
+    audio(catalogue, currentTrack, "pause");
   }
   isPlaying = !isPlaying;
 });

@@ -1,8 +1,22 @@
-const audio = (catalogue,currentTrack) => {
-    console.log('initialisation de l\'audio');
-    const urlAudio = "./assets/audio/";
-    let track = new Audio(urlAudio+catalogue[currentTrack].audio);
-    console.dir(track);
+const audio = (catalogue, currentTrack, status = "init") => {
+  const urlAudio = "./assets/audio/";
+
+  switch (status) {
+    case "init":
+      console.log("initialisation de l'audio");
+      track = new Audio(urlAudio + catalogue[currentTrack].audio);
+      break;
+    case "play":
+      console.dir(track);
+      track.play();
+      break;
+    case "pause":
+      track.pause();
+      break;
+    default:
+      console.log("erreur dans la fonction audio");
+      break;
+  }
 };
 
 export { audio };
