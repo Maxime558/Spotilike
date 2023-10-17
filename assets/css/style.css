@@ -43,14 +43,14 @@ body {
 }
 
 button {
-  border-radius: 15px;
+  border-radius: 80px;
   padding: 0.8rem;
   padding: 0.6rem 3rem;
   background: #ff9966;
   background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);
   background: linear-gradient(to right, #ff5e62, #ff9966);
   color: white;
-  margin: 1rem 1.5rem;
+  margin: 1.5rem;
   border: 1px black;
 }
 #slider {
@@ -59,4 +59,13 @@ button {
 #style {
   border: rgba(255, 255, 255, 0.459) 1px solid;
   padding: 1rem;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+#playPause img {
+  width: 24px;
+  height: 24px;
 }

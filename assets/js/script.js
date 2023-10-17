@@ -22,7 +22,7 @@ prevButton.addEventListener("click", () => {
   audio("pause");
   audio();
   audio("play");
-  playPause.innerText = "Pause";
+  playPause.innerHTML = '<img src="assets/img/pause_icon.svg" alt="Pause Icon" class="icon">';
   globalThis.isPlaying = true;
   console.log(currentTrack);
 });
@@ -37,7 +37,7 @@ nextButton.addEventListener("click", () => {
   audio("pause");
   audio();
   audio("play");
-  playPause.innerText = "Pause";
+  playPause.innerHTML = '<img src="assets/img/pause_icon.svg" alt="Pause Icon" class="icon">';
   globalThis.isPlaying = true;
   console.log(currentTrack);
 });
@@ -45,10 +45,10 @@ nextButton.addEventListener("click", () => {
 //Action sur le bouton de play-pause
 playPause.addEventListener("click", () => {
   if (isPlaying) {
-    playPause.innerText = "Play";
+    playPause.innerHTML = '<img src="assets/img/play_icon.svg" alt="Play Icon" class="icon">';
     audio("pause");
   } else {
-    playPause.innerText = "Pause";
+    playPause.innerHTML = '<img src="assets/img/pause_icon.svg" alt="Pause Icon" class="icon">';
     audio("play");
   }
   isPlaying = !isPlaying;

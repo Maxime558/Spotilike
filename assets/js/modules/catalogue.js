@@ -159,6 +159,17 @@ const catalogue = [
     album: "Tension",
     like: false,
   },
+  {
+    titre: "Good Times Bad Times",
+    artiste: "Led Zeppelin",
+    genre: ["Blues", "Rock", "Hard Rock"],
+    annee: 1969,
+    cover: "Led Zeppelin.jpg",
+    audio: "Led Zeppelin - Good Times Bad Times (Official Audio).mp3",
+    album: "Led Zeppelin",
+    like: false,
+  },
+
 ];
 
 export { catalogue };
