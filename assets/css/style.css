@@ -46,16 +46,17 @@ button {
   border-radius: 15px;
   padding: 0.8rem;
   padding: 0.6rem 3rem;
-  background: #ff9966; 
-  background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  
-  background: linear-gradient(to right, #ff5e62, #ff9966); 
+  background: #ff9966;
+  background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);
+  background: linear-gradient(to right, #ff5e62, #ff9966);
   color: white;
   margin: 1rem 1.5rem;
+  border: 1px black;
 }
 #slider {
   overflow: hidden;
 }
 #style {
-border: rgba(255, 255, 255, 0.459) 1px solid;
-padding: 1rem;
+  border: rgba(255, 255, 255, 0.459) 1px solid;
+  padding: 1rem;
 }

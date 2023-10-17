@@ -3,14 +3,14 @@ import { slider } from "./modules/slider.js";
 import { audio } from "./modules/audio.js";
 // console.dir(catalogue);
 
-let currentTrack = 0;
-let isPlaying = false;
 const prevButton = document.querySelector("#prev");
 const nextButton = document.querySelector("#next");
 const playPause = document.querySelector("#playPause");
 // Globalthis permet de partager une variable ou une fonction avec tout mes modules
 globalThis.track = null;
 globalThis.catalogue = catalogue;
+globalThis.currentTrack = 0;
+globalThis.isPlaying = false;
 
 prevButton.addEventListener("click", () => {
   if (currentTrack > 0) {
@@ -18,7 +18,12 @@ prevButton.addEventListener("click", () => {
   } else {
     currentTrack = catalogue.length - 1;
   }
-  slider(currentTrack, "prev");
+  slider("prev");
+  audio("pause");
+  audio();
+  audio("play");
+  playPause.innerText = "Pause";
+  globalThis.isPlaying = true;
   console.log(currentTrack);
 });
 
@@ -28,21 +33,26 @@ nextButton.addEventListener("click", () => {
   } else {
     currentTrack = 0;
   }
-  slider(currentTrack, "next");
+  slider("next");
+  audio("pause");
+  audio();
+  audio("play");
+  playPause.innerText = "Pause";
+  globalThis.isPlaying = true;
   console.log(currentTrack);
 });
 
 //Action sur le bouton de play-pause
 playPause.addEventListener("click", () => {
   if (isPlaying) {
-    playPause.innerText = "Pause";
-    audio(currentTrack, "play");
-  } else {
     playPause.innerText = "Play";
-    audio(currentTrack, "pause");
+    audio("pause");
+  } else {
+    playPause.innerText = "Pause";
+    audio("play");
   }
   isPlaying = !isPlaying;
 });
 
-slider(currentTrack);
-audio(currentTrack);
+slider();
+audio();

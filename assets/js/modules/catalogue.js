@@ -85,7 +85,7 @@ const catalogue = [
     genre: ["	Electronic", "Rock", "Pop"],
     annee: 2023,
     cover: "The-harmony-codex.jpg",
-    audio: "Do-i-wanna-know.mp3",
+    audio: "Time-is-running-out.mp3",
     album: "The Harmony Codex",
     like: false,
   },
