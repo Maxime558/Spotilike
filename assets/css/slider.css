@@ -1,0 +1,26 @@
+#slider {
+    overflow: hidden;
+    width: 50vw;
+    position: relative;
+}    
+#slider img {
+width: 100%;
+}
+
+#imgA {
+position: absolute;
+top: 0;
+left: 0;
+
+}
+
+
+#coverSlider {
+
+}
+.transSlider{
+transition: all 0.4s;
+}
+.slideRight{
+    transform: translateX(100%);
+}

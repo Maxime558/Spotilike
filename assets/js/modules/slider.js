@@ -1,24 +1,39 @@
+const sliderHTML = document.querySelector("#slider");
+const coverUrl = "./assets/img/cover/";
+
+const initSlider = () => {
+  const coverSlider = document.createElement("img");
+  coverSlider.src = coverUrl + catalogue[currentTrack].cover;
+  coverSlider.id = "coverSlider";
+  sliderHTML.append(coverSlider);
+  const imgA = document.createElement("img");
+  imgA.src = coverUrl + catalogue[currentTrack].cover;
+  imgA.id = "imgA";
+  sliderHTML.append(imgA);
+};
+
+const nextSlider = () => {
+  document.querySelector("#coverSlider").src =
+    coverUrl + catalogue[currentTrack].cover;
+  document.querySelector("#imgA").classList.add("slideRight");
+  document.querySelector("#imgA").classList.add("transSlider");
+  setTimeout(() => {
+    document.querySelector("#imgA").src =
+      coverUrl + catalogue[currentTrack].cover;
+    document.querySelector("#imgA").classList.remove("slideRight");   
+    document.querySelector("#imgA").classList.remove(".transSlider");
+  }, 400);
+};
+
 const slider = (status = "init") => {
   console.log("Initialisation du slider");
-  // console.dir(catalogue);
-  // console.log(catalogue[0].cover);
-  // console.log(catalogue[0]["cover"]);
-  const sliderHTML = document.querySelector("#slider");
-  const coverUrl = "./assets/img/cover/";
 
   switch (status) {
     case "init":
-      const coverSlider = document.createElement("img");
-      coverSlider.src = coverUrl + catalogue[currentTrack].cover;
-      coverSlider.id = "coverSlider";
-      // prepend insert un element avant ceux existant deja dans le parent
-      // sliderHTML.prepend(coverSlider);
-      // append insert un element après ceux existant deja dans le parent
-      sliderHTML.append(coverSlider);
+      initSlider();
       break;
     case "next":
-      document.querySelector("#coverSlider").src =
-        coverUrl + catalogue[currentTrack].cover;
+      nextSlider();
       break;
     case "prev":
       document.querySelector("#coverSlider").src =
@@ -28,3 +43,32 @@ const slider = (status = "init") => {
   }
 };
 export { slider };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const playlist = document.getElementById("playlist");
+  const trackInfo = document.getElementById("trackInfo");
+
+  catalogue.forEach((track, index) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${track.titre} - ${track.artiste}`;
+    listItem.addEventListener("click", () => {
+      updateTrackInfo(track);
+    });
+
+    const hr = document.createElement("hr");
+    playlist.appendChild(listItem);
+    playlist.appendChild(hr);
+  });
+
+  function updateTrackInfo(track) {
+    trackInfo.innerHTML = `
+      <img src="./assets/img/cover/${track.cover}" alt="${track.titre} Cover">
+      <h3>${track.titre}</h3>
+      <p>Artiste: ${track.artiste}</p>
+      <p>Genre: ${track.genre.join(", ")}</p>
+      <p>Année: ${track.annee}</p>
+    `;
+  }
+
+  updateTrackInfo(catalogue[0]);
+});
