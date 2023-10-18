@@ -81,7 +81,9 @@ button {
   color: white;
   border: white 1px solid;
   width: 40%;
-  height: 91.5vh;
+  overflow: hidden;
+  height: 93vh;
+  margin-top: 5rem;
 }
 
 .track-list,
@@ -91,8 +93,8 @@ button {
 }
 
 .track-details .track-info {
-width: 80%;
-margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
 #playlist {
@@ -128,8 +130,8 @@ margin: auto;
   color: white;
 }
 .track-info {
-border: white 1px solid;
-width: 100%;
+  border: white 1px solid;
+  width: 100%;
 }
 
 #trackInfo img {
@@ -145,4 +147,36 @@ width: 100%;
 .track-details h2 {
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  #style {
+    max-height: 70vh;
+    min-height: 70vh;
+  }
+  .playlist {
+    max-height: 70vh;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 1622px) {
+  #style {
+  }
+  .playlist {
+    max-height: 70vh;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  #style {
+    max-height: none;
+    min-height: none;
+  }
+  .playlist {
+    max-height: none;
+    height: 70vh;
+    overflow-y: scroll;
+  }
 }

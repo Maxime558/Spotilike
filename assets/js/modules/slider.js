@@ -13,14 +13,35 @@ const initSlider = () => {
 };
 
 const nextSlider = () => {
+  currentTrack = (currentTrack + 1) % catalogue.length;
   document.querySelector("#coverSlider").src =
     coverUrl + catalogue[currentTrack].cover;
-  document.querySelector("#imgA").classList.add("transSlider","slideLeft");
+  document.querySelector("#imgA").classList.add("transSlider", "slideLeft");
   setTimeout(() => {
     document.querySelector("#imgA").src =
       coverUrl + catalogue[currentTrack].cover;
-    document.querySelector("#imgA").classList.remove("transSlider","slideLeft");
-  },400);
+    document
+      .querySelector("#imgA")
+      .classList.remove("transSlider", "slideLeft");
+
+    updateTrackInfo(catalogue[currentTrack]);
+  }, 400);
+};
+
+const prevSlider = () => {
+  currentTrack = (currentTrack - 1 + catalogue.length) % catalogue.length;
+  document.querySelector("#coverSlider").src =
+    coverUrl + catalogue[currentTrack].cover;
+  document.querySelector("#imgA").classList.add("transSlider", "slideRight");
+  setTimeout(() => {
+    document.querySelector("#imgA").src =
+      coverUrl + catalogue[currentTrack].cover;
+    document
+      .querySelector("#imgA")
+      .classList.remove("transSlider", "slideRight");
+
+    updateTrackInfo(catalogue[currentTrack]);
+  }, 400);
 };
 
 const slider = (status = "init") => {
@@ -34,8 +55,8 @@ const slider = (status = "init") => {
       nextSlider();
       break;
     case "prev":
-      document.querySelector("#coverSlider").src =
-        coverUrl + catalogue[currentTrack].cover;
+      prevSlider();
+      break;
     default:
       break;
   }

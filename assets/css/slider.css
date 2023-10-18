@@ -24,6 +24,9 @@ transition: all 0.4s;
 .slideLeft{
     transform: translateX(-100%);
 }
+.slideRight{
+    transform: translateX(100%);
+}
 .fadeOut {
 opacity: 0;
 }
