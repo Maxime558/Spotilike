@@ -1,0 +1,30 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const playlist = document.getElementById("playlist");
+  const trackInfo = document.getElementById("trackInfo");
+
+  catalogue.forEach((track, index) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${track.titre} - ${track.artiste}`;
+    listItem.addEventListener("click", () => {
+      updateTrackInfo(track);
+    });
+
+    const hr = document.createElement("hr");
+    playlist.appendChild(listItem);
+    playlist.appendChild(hr);
+  });
+
+  function updateTrackInfo(track) {
+    trackInfo.innerHTML = `
+        <img src="./assets/img/cover/${track.cover}" alt="${track.titre} Cover">
+        <h3>${track.titre}</h3>
+        <p>Artiste: ${track.artiste}</p>
+        <p>Genre: ${track.genre.join(", ")}</p>
+        <p>Année: ${track.annee}</p>
+      `;
+  }
+
+  updateTrackInfo(catalogue[0]);
+});
+
+export { playlist };
