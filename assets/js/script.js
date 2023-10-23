@@ -16,7 +16,7 @@ mcTime.on("panright", () => {
 });
 mcTime.on("panleft", () => {
   if (track.currentTime > 0)
-    track.currentTime +- 0.5;
+    track.currentTime -= 0.5;
 });
 mcBody.on("panup", () => {
   if (track) {
