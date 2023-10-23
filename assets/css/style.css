@@ -100,6 +100,7 @@ button {
 #playlist {
   list-style: none;
   padding: 0;
+  color: white;
 }
 
 #playlist li {
@@ -149,34 +150,26 @@ button {
   margin-bottom: 10px;
 }
 
-@media screen and (max-width: 1000px) {
-  #style {
-    max-height: 70vh;
-    min-height: 70vh;
-  }
-  .playlist {
-    max-height: 70vh;
-    margin-top: 0;
-  }
+img {
+  width: 100%;
 }
-
-@media screen and (max-width: 1622px) {
-  #style {
-  }
-  .playlist {
-    max-height: 70vh;
-    overflow-y: scroll;
-  }
+.item {
+  display: flex;
 }
-
-@media screen and (max-width: 470px) {
-  #style {
-    max-height: none;
-    min-height: none;
-  }
-  .playlist {
-    max-height: none;
-    height: 70vh;
-    overflow-y: scroll;
-  }
+.item p {
+  margin: 0 6px;
 }
+.item i {
+  margin: 0 6px;
+  border: white solid 1px;
+  padding: 8px;
+}
+.itemImg {
+  width: 60px;
+}
+.fa-regular {
+color:  red;
+}
+.fa-heart {
+  color:  red;
+  }

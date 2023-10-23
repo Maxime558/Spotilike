@@ -12,37 +12,24 @@ const initSlider = () => {
   sliderHTML.append(imgA);
 };
 
-const nextSlider = () => {
-  currentTrack = (currentTrack + 1) % catalogue.length;
-  document.querySelector("#coverSlider").src =
-    coverUrl + catalogue[currentTrack].cover;
-  document.querySelector("#imgA").classList.add("transSlider", "slideLeft");
-  setTimeout(() => {
-    document.querySelector("#imgA").src =
-      coverUrl + catalogue[currentTrack].cover;
-    document
-      .querySelector("#imgA")
-      .classList.remove("transSlider", "slideLeft");
+const nextSlider=()=>{
+  document.querySelector("#coverSlider").src = coverUrl + catalogue[currentTrack].cover;
+  document.querySelector("#imgA").classList.add("transSlider","slideRight");
+  setTimeout(()=>{
+      document.querySelector("#imgA").src = coverUrl + catalogue[currentTrack].cover;
+      document.querySelector("#imgA").classList.remove("transSlider","slideRight");
+  },500)
+}
 
-    updateTrackInfo(catalogue[currentTrack]);
-  }, 400);
-};
-
-const prevSlider = () => {
-  currentTrack = (currentTrack - 1 + catalogue.length) % catalogue.length;
-  document.querySelector("#coverSlider").src =
-    coverUrl + catalogue[currentTrack].cover;
-  document.querySelector("#imgA").classList.add("transSlider", "slideRight");
-  setTimeout(() => {
-    document.querySelector("#imgA").src =
-      coverUrl + catalogue[currentTrack].cover;
-    document
-      .querySelector("#imgA")
-      .classList.remove("transSlider", "slideRight");
-
-    updateTrackInfo(catalogue[currentTrack]);
-  }, 400);
-};
+const prevSlider=()=>{
+    document.querySelector("#coverSlider").src = coverUrl + catalogue[currentTrack].cover;
+    document.querySelector("#imgA").classList.add("transSlider","slideLeft");
+    setTimeout(()=>{
+        document.querySelector("#imgA").src = coverUrl + catalogue[currentTrack].cover;
+        document.querySelector("#imgA").classList.remove("transSlider","slideLeft");
+    },500)
+    
+}
 
 const slider = (status = "init") => {
   console.log("Initialisation du slider");

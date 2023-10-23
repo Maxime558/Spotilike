@@ -1,32 +1,27 @@
 #slider {
-    overflow: hidden;
-    width: 50vw;
-    position: relative;
-}    
+  overflow: hidden;
+  width: 50vw;
+  position: relative;
+}
 #slider img {
-width: 100%;
+  width: 100%;
 }
 
 #imgA {
-position: absolute;
-top: 0;
-left: 0;
-
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-
-#coverSlider {
-
-} 
-.transSlider{
-transition: all 0.4s;
+.transSlider {
+  transition: all 0.4s;
 }
-.slideLeft{
-    transform: translateX(-100%);
+.slideLeft {
+  transform: translateX(-100%);
 }
-.slideRight{
-    transform: translateX(100%);
+.slideRight {
+  transform: translateX(100%);
 }
 .fadeOut {
-opacity: 0;
+  opacity: 0;
 }
