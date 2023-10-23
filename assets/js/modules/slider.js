@@ -1,4 +1,3 @@
-const sliderHTML = document.querySelector("#slider");
 const coverUrl = "./assets/img/cover/";
 
 const initSlider = () => {
@@ -32,7 +31,6 @@ const prevSlider=()=>{
 }
 
 const slider = (status = "init") => {
-  console.log("Initialisation du slider");
 
   switch (status) {
     case "init":

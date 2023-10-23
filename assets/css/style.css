@@ -54,6 +54,10 @@ button {
   margin: 1.5rem;
   border: 1px black;
 }
+#buttons {
+display: flex;
+justify-content: center;
+}
 #slider {
   overflow: hidden;
 }
@@ -69,11 +73,6 @@ button {
 #playPause img {
   width: 24px;
   height: 24px;
-}
-
-#navigation {
-  display: flex;
-  justify-content: center;
 }
 
 .playlist {
@@ -172,4 +171,16 @@ color:  red;
 }
 .fa-heart {
   color:  red;
+  }
+
+  #time {
+  border: 0.1rem white solid;
+  border-radius: 20px;
+  height: 1.5rem;
+  }
+  #subTime {
+  width: 0;
+  height: 1.5rem;
+  background-color: rgb(255, 93, 93);
+  border-radius: 20px;
   }

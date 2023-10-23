@@ -3,7 +3,6 @@ const audio = (status = "init") => {
   
     switch (status) {
       case "init":
-        console.log("initialisation de l'audio");
         track = new Audio(urlAudio + catalogue[currentTrack].audio);
         break;
       case "play":
@@ -14,7 +13,6 @@ const audio = (status = "init") => {
         track.pause();
         break;
       default:
-        console.log("erreur dans la fonction audio");
         break;
     }
   };

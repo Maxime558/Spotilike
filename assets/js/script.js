@@ -2,29 +2,53 @@ import { catalogue } from "./modules/catalogue.js";
 import { slider } from "./modules/slider.js";
 import { audio } from "./modules/audio.js";
 import { playlist } from "./modules/playlist.js";
-// console.dir(catalogue);
 const prevButton = document.querySelector("#prev");
 const nextButton = document.querySelector("#next");
 const playPause = document.querySelector("#playPause");
+const subTime = document.querySelector("#subTime");
+globalThis.sliderHTML = document.querySelector("#slider");
+const mc = new Hammer(sliderHTML);
+const mcTime = new Hammer(document.body, { direction: Hammer.DIRECTION_ALL });
+const mcBody = new Hammer(document.body, { direction: Hammer.DIRECTION_ALL });
+mcTime.on("panright", () => {
+  if (track.currentTime < track.duration)
+    track.currentTime += 0.5;
+});
+mcTime.on("panleft", () => {
+  if (track.currentTime > 0)
+    track.currentTime +- 0.5;
+});
+mcBody.on("panup", () => {
+  if (track) {
+    if (track.volume <= 0.99) {
+      track.volume += 0.01;
+    }
+  }
+});
 
-// Globalthis permet de partager une variable ou une fonction avec tout mes modules
+mcBody.on("pandown", () => {
+  if (track) {
+    if (track.volume >= 0.01) {
+      track.volume -= 0.01;
+    }
+  }
+});
+
 globalThis.track = null;
 globalThis.catalogue = catalogue;
 globalThis.currentTrack = 0;
 globalThis.isPlaying = false;
 globalThis.miniPlayPause = (index) => {
-  console.log(index);
   if (currentTrack !== index) {
     currentTrack = index;
     isPlaying = false;
     audio("pause");
     audio();
-    slider("next")
+    slider("next");
   }
   switchPlayPause();
 };
 
-// fonction chargée de gérer l'etat de mon bouton Play/Pause
 const statusBPP = () => {
   if (!isPlaying) {
     playPause.innerHTML =
@@ -36,8 +60,7 @@ const statusBPP = () => {
 };
 
 const switchPlayPause = () => {
-  // ! veut dire inverse d'une boolean ex !isPlaying vaut false
-  if (!isPlaying /*  === false */) {
+  if (!isPlaying) {
     isPlaying = true;
     audio("play");
   } else {
@@ -45,50 +68,50 @@ const switchPlayPause = () => {
     audio("pause");
   }
   statusBPP();
-  //isPlaying = !isPlaying;
 };
 
-// click sur le bouton next
-nextButton.addEventListener("click", () => {
-  if (currentTrack < catalogue.length - 1) {
-    currentTrack++;
-  } else {
-    currentTrack = 0;
-  }
-  slider("next");
-  // j'arrete la lecture en cours
-  audio("pause");
-  // je reinitialise track avec la nouvelle valeur de currentTrack
-  audio(); //init
-  // je relance la lecture
-  audio("play");
-  // je viens de lancer une nouvelle lecture : isPlaying doit passer à true
-  console.log(isPlaying);
-  isPlaying = true;
-  statusBPP();
-});
-// idem pour previous
-prevButton.addEventListener("click", () => {
+const prevEvents = () => {
   if (currentTrack > 0) {
     currentTrack--;
   } else {
     currentTrack = catalogue.length - 1;
   }
   slider("prev");
-  // j'arrete la lecture en cours
   audio("pause");
-  // je reinitialise track avec la nouvelle valeur de currentTrack
-  audio(); //init
-  // je relance la lecture
+  audio();
   audio("play");
-  // je viens de lancer une nouvelle lecture : isPlaying doit passer à true
-  console.log(isPlaying);
   isPlaying = true;
   statusBPP();
-});
-// actions sur le bouton play-pause
+};
+
+const nextEvents = () => {
+  if (currentTrack < catalogue.length - 1) {
+    currentTrack++;
+  } else {
+    currentTrack = 0;
+  }
+  slider("next");
+  audio("pause");
+  audio();
+  audio("play");
+  isPlaying = true;
+  statusBPP();
+};
+
+mc.on("swiperleft", prevEvents);
+nextButton.addEventListener("click", nextEvents);
+
+mc.on("swiperight", prevEvents);
+prevButton.addEventListener("click", prevEvents);
+
 playPause.addEventListener("click", switchPlayPause);
 slider();
 audio();
-// affichage de la playList
+console.dir(track);
+
+setInterval(() => {
+  let w = (track.currentTime * 100) / track.duration;
+  subTime.style.width = w + "%";
+  console.log(w);
+}, 50);
 playlist();
